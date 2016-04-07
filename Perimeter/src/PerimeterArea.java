@@ -1,45 +1,37 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class PerimeterArea 
 {
+	static Scanner in = new Scanner(System.in);
+
 	public static void main(String[] args) 
 	{
-		getDimensions();
-	}	
-
-	public static void getDimensions() {
-		// Need Scanner for input
-		Scanner in = new Scanner(System.in);
-		System.out.println("Welcome to Grand Circus' Room " + "Detail Generator!");
-		System.out.println("Enter Length:");
-		// User inputs length
-		String userLength = in.nextLine();
-		// Change String to number
-		double length = Double.parseDouble(userLength);
-		System.out.println("Enter Width:");
-		// User inputs width
-		String userWidth = in.nextLine();
-		// Change String to number
-		double width = Double.parseDouble(userWidth);
-		System.out.println("Enter Height:");
-		// User inputs heights
-		String userHeight = in.nextLine();
-		double height = Double.parseDouble(userHeight);
-		// System prints out dimensions of room
-		System.out.println("Area: " + (width * length));
-		System.out.println("Perimeter: " + (2 * width + 2 * length));
-		System.out.println("Volume " + height * width * length);
-
-		System.out.println("Continue? (y/n):");
-		String userAnswer = in.nextLine();
-		// System stops at NO (n) & Continues otherwise
-		if (userAnswer.equals("n")) {
-			System.out.println("You're done");
-		} else {
-			getDimensions();
-
+		System.out.println("Welcome to Grand Circus' Room Detail Generator!");
+		String userContinue = "y";
+		while (userContinue.equalsIgnoreCase("y")) 
+		{
+			System.out.println();
+			System.out.print("Enter Length:");
+			double length = in.nextDouble();
+			in.nextLine();
+			System.out.print("Enter Width:");
+			double width = in.nextDouble();
+			in.nextLine();
+			System.out.print("Enter Height:");
+			double height = in.nextDouble();
+			in.nextLine();
+			getDimensions(length, width, height);
+			userContinue = in.nextLine();
+			
 		}
-	}
+		in.close();
 	}
 
-
+	public static void getDimensions(double length, double width, double height) {
+		double area = width * length;
+		double perimeter = 2 * length + 2 * width;
+		double volume= area*height; 
+		System.out.print("Area:" + area + "\n" + "Perimeter:" + perimeter + 
+				"\nVolume:"+ volume+"\n\n" + "Continue?(y/n):");
+	}
+}
