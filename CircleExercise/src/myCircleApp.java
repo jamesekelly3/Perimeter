@@ -5,7 +5,8 @@ public class myCircleApp {
 	{
 		while(!in.hasNextFloat())
 		{
-			System.out.println("Enter a valid integer:");
+			System.out.println("C'mon now, you know that's not a float"
+					+ ". Enter a real float:");
 			in.nextLine(); 
 			
 		}
