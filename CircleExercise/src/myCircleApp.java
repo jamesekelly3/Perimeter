@@ -1,6 +1,19 @@
 import java.util.Scanner; 
 
 public class myCircleApp {
+	public static float readValidFloatNoExp()
+	{
+		while(!in.hasNextFloat())
+		{
+			System.out.println("Enter a valid integer:");
+			in.nextLine(); 
+			
+		}
+		
+		float x = in.nextFloat();
+		in.nextLine();
+		return x;
+	}
 	static Scanner in =new Scanner(System.in);
 
 	public static void main(String[] args) {
@@ -13,9 +26,7 @@ public class myCircleApp {
 		Circle c= new Circle(newRadius);
 		System.out.println("Welcome to the Circle Tester");
 		System.out.print("Enter radius:");
-		newRadius =in.nextFloat(); 
-		in.nextLine();
-		//newRadius = Circle.readValidFloatNoExp();
+		newRadius = readValidFloatNoExp();
 		c.setRadius(newRadius);
 		String circumference=c.getFormattedCircumference();
 		String area=c.getAreaFormatted();
@@ -29,5 +40,6 @@ public class myCircleApp {
 		if(userContinue!="y")
 			System.out.println("Goodbye");
 	}
-
+	
 }
+

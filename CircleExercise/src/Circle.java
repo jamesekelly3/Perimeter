@@ -21,7 +21,7 @@ public class Circle {
 	{
 	 Radius= radius;
 	}
-	public static float readValidFloatNoExp(float radius)
+	public static float readValidFloatNoExp(float x)
 	{
 		while(!in.hasNextFloat())
 		{
@@ -31,8 +31,8 @@ public class Circle {
 			
 		}
 		
-		radius = in.nextFloat();
-		return radius;
+		x = in.nextFloat();
+		return x;
 	}
 	public float getCircumerence()
 	{
