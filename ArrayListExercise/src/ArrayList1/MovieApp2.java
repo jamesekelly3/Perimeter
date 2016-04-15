@@ -3,9 +3,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-
-
-public class MovieApp {
+public class MovieApp2 {
 	public static int readValidIntegerNoExp()
 	{
 		while(!in.hasNextInt())
@@ -38,34 +36,34 @@ public class MovieApp {
 		while(userContinue.equalsIgnoreCase("y"))
 		{
 		System.out.println("What category are you interest in?");
-		System.out.println("The following are the categories: \n1-Musical \n2-Comedy \n3-Drama \n4-Horror\n5-Scifi\n6-Animated\nPlease enter the number ofthe category you would like to view:");
+		System.out.println("The following are the categories: \n1-Action \n2-Comedy \n3-Drama \n4-Kids\nPlease enter the number ofthe category you would like to view:");
 	
 		ArrayList<Movie> myList = new ArrayList<>();
 		  
- 			for (int i = 1; i < 101; i++) 
+		String[] title={"Roots", "Batman vs Superman", "Devil Wears Prada", "The Godfather", "The Color Purple", "White Chicks", "Titanic", "Finding Nemo", 
+		"Mean Girls", "Men In Black"};
+ 		String[] categories={"Drama", "Action", "Comedy", "Drama", "Drama", "Comedy", "Drama", "Kids", "Comedy","Action"};
+
+ 			for (int i = 0; i < 10; i++) 
  			{
- 				myList.add(MovieIO.getMovie(i));
- 				//myList.get(i).setTitle(title[i]);
- 	           // myList.get(i).setCategory(categories[i]);
+ 				myList.add(new Movie());
+ 				myList.get(i).setTitle(title[i]);
+ 	            myList.get(i).setCategory(categories[i]);
  	            
  			}
  			
- 			int cat=getValidNumberInRange(1,6);
+ 			int cat=getValidNumberInRange(1,4);
  			 
  			String catName; 
  			switch(cat)
  			{
- 				case 1:catName="Musical"; 
+ 				case 1:catName="Action"; 
  				break;
  				case 2:catName="Comedy";
  				break;
  				case 3:catName="Drama";
  				break;
- 				case 4:catName="Horror"; 
- 				break;
- 				case 5:catName="Scifi"; 
- 				break;
- 				case 6:catName="Animated"; 
+ 				case 4:catName="Kids"; 
  				break;
  				default:catName="Not valid";
  				System.out.println("Entry not valid");
@@ -95,6 +93,3 @@ public class MovieApp {
 
 	}
 	
-	
-
-
