@@ -72,7 +72,7 @@ public class MovieApp {
  				break;
  				
  			}
- 			if(catName.equalsIgnoreCase("Not a valid entry"))
+ 			if(catName.equalsIgnoreCase("Entry not valid"))
 				{
  				System.out.println("We don't have that my baby. Enter a valid category.:");
  				cat=in.nextInt();
